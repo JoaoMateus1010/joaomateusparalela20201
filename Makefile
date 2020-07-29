@@ -1,6 +1,6 @@
 all:	
 	git add .
-	git commit -m '\$(COMMIT_MSG)$\'	
+	git commit -m '$(COMMIT_MSG)$\'	
 
 status:
 	git status
