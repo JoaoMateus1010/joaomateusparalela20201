@@ -1,3 +1,6 @@
+/*
+    Código fornecido pelo professor João Marcelo, sem nenhuma auteração.
+*/
 #include <stdio.h>
 #include <omp.h>
 #include <unistd.h>
