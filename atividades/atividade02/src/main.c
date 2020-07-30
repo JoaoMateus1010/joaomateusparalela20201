@@ -1,31 +1,17 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include <omp.h>
-
-#include "mtxMul.h"
-
-int **AlocMat(int linhas, int colunas) {
-   double **ret;
-   ret = (double**)calloc(linhas,sizeof(double));
-   for(int i=0;i<linhas;i++){
-        ret[i]=(double*)calloc(colunas,sizeof(double));
-   }
-   return ret;
-}
-int main(int argc,char *argv[]){    
-    int size = atoi(argv[1]);    
-    double **a = AlocMat(size,size);  
-    double **b = AlocMat(size,size);      
-    double **c = AlocMat(size,size);  
-    for(int i=0;i<size;i++){
-        for(int j=0;j<size;j++){
-            a[i][j]=1.0;
-            b[i][j]=1.0;
-            c[i][j]=0.0;
-        }
-    }           
-    mtxMul(c,a,b,size);  
-    //showMtx(c,size); 
-
-    return 0; 
+#include <unistd.h>
+            
+int main (int argc , char *argv[]) {
+    int max; 
+    sscanf (argv[1], "%d", &max);
+    long int sum = 0;    
+    #pragma omp parallel for reduction(+:sum) schedule(runtime)
+    for (int i = 1; i <= max; i++) {
+        printf ("%2d @ %d\n", i, omp_get_thread_num());
+        sleep (i < 4 ? i + 1 : 1);
+        sum = sum + i;
+    }
+    printf ("%ld\n", sum);
+    return 0;
 }
