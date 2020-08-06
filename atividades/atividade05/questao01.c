@@ -24,7 +24,7 @@ int main(int argc,char* argv[]){
         /*
             Professor fiz uma pequena alteração na forma de gerar o número aleatório para que o tamanho do vetor seja diferente, 
             pois o rand usa a hora e tava dando o mesmo valor de size para todos os vetores, então eu adicionei uma divisão por rank, 
-            assim melhora o random de cada execução.a
+            assim melhora o random de cada execução.
         */
         int buffer[rand_size];
         MPI_Send(&buffer,rand_size,MPI_INT,SOURCE,0,MPI_COMM_WORLD);
