@@ -1,0 +1,7 @@
+# Core i5 7200U 8 GB
+#Processos      Tempo
+1               3s
+2               2s
+4               1s
+6               1s
+8               1s

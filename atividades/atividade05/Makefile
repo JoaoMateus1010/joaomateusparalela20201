@@ -4,3 +4,9 @@ q01:
 q01_clean:
 	rm questao01
 
+q03:
+	mpicc -o questao03 questao03.c
+	mpirun -np 4 questao03 20
+
+clean:
+	rm questao01 questao03 questao02

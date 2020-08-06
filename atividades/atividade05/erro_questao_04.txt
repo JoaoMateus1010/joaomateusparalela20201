@@ -1,0 +1,6 @@
+>>
+$ mpirun -np 2 questao04 1000000
+<<
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node joao-Aspire-A515-51G exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
