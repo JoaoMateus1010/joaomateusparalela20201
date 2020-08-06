@@ -8,5 +8,9 @@ q03:
 	mpicc -o questao03 questao03.c
 	mpirun -np 4 questao03 20
 
+q05:
+	mpicc -o questao05 questao05.c
+	mpirun -np 4 questao05 1000000
+
 clean:
 	rm questao01 questao03 questao02
