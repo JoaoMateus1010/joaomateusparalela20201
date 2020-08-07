@@ -6,7 +6,7 @@ q01_clean:
 
 q03:
 	mpicc -o questao03 questao03.c
-	mpirun -np 4 questao03 20
+	mpirun -np 4 questao03 17
 
 q05:
 	mpicc -o questao05 questao05.c

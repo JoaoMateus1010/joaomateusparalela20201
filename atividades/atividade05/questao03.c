@@ -8,24 +8,28 @@ int main(int argc,char* argv[]){
 
     int rank, numtasks,N;
     sscanf(argv[1],"%d",&N);        
-    int v1[N],v2[N],result;    
+    int *v1 = (int*)calloc(N,sizeof(int));
+    int *v2 = (int*)calloc(N,sizeof(int));
+    int *vr = (int*)calloc(N,sizeof(int));    
 
     for(int i=0;i<N;i++){
-        v1[i]=i;
-        v2[i]=i;
+        v1[i]=i+1;
+        v2[i]=i+1;
     }
 
     MPI_Init(&argc,&argv);
     MPI_Comm_size(MPI_COMM_WORLD,&numtasks);
     MPI_Comm_rank(MPI_COMM_WORLD,&rank);           
-    int lo = rank*(N/numtasks)+1;
-    int hi = rank*(N/numtasks)+(N/numtasks);    
+    int lo = rank*(N/numtasks);
+    int hi = rank*(N/numtasks)+(N/numtasks)-1;    
     //Intervalos não levam em conta os restos, como foi dito na questão    
     int SUM = 0;
     for(int i=lo;i<=hi;i++){
-        SUM+=i;
-    }    
-    //printf("RANK : %d result P: -> %d\n",rank,SUM);
+        vr[i]=v1[i]*v2[i];                
+    }
+    for(int i=lo;i<=hi;i++){             
+        SUM+=vr[i];
+    }        
     //Todos irão fazer uma parcela da soma e no fim irão mandar para o Master o resultado para que ele faça a soma    
     if(rank!=MASTER){
         //Código para qualquer ponto exceto o master

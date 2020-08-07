@@ -8,8 +8,7 @@ double f(double x) {
     return return_val;
 }
 
-int main(int argc, char *argv[]) {
-    int t1 = MPI_Wtime();
+int main(int argc, char *argv[]) {    
     int rank, size;
     double a = 0.0, b = 1.0;
     long int n = 100000000;
@@ -21,6 +20,7 @@ int main(int argc, char *argv[]) {
     MPI_Status status;
 
     MPI_Init(&argc, &argv);
+    double t1 = MPI_Wtime();
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
@@ -49,9 +49,8 @@ int main(int argc, char *argv[]) {
         printf("With n = %ld.\n", n);
         printf("Integral from %lf to %lf = %lf \n", a, b, total);
     }
-
-    MPI_Finalize();
-    int t2 = MPI_Wtime();
-    printf("Tempo: %d ",t2-t1);
+    double t2 = MPI_Wtime();
+    MPI_Finalize();    
+    printf("Tempo: %f ",t2-t1);
     return 0;
 }
