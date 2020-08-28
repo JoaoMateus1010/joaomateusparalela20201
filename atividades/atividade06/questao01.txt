@@ -1,0 +1,8 @@
+# Core i5 7200U 8 GB
+# N = 1024 * 1024 
+# Processos    Tempo MPI_Allreduce  Tempo sem MPI_Allreduce
+1                   0m0,663s                   0m0,608s
+2                   0m0,688s                   0m0,609s
+4                   0m0,677s                   0m0,679s
+6                   0m0,762s                   0m0,691s
+8                   0m0,794s                   0m0,757s
