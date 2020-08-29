@@ -5,12 +5,10 @@ double **AlocMat(int linhas, int colunas) {
    ret = (double**)calloc(linhas,sizeof(double));
    for(int i=0;i<linhas;i++){
         ret[i]=(double*)calloc(colunas,sizeof(double));
-   }   
-   int count = 1;
+   }      
    for(int i=0;i<linhas;i++){
         for(int j=0;j<colunas;j++){
-            ret[i][j]=count;
-            count++;
+            ret[i][j]=1.0;            
         }
     }
    return ret;
