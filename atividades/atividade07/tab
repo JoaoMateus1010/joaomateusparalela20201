@@ -1,0 +1,33 @@
+[joao-Aspire-A515-51G:18701] *** Process received signal ***
+[joao-Aspire-A515-51G:18701] Signal: Segmentation fault (11)
+[joao-Aspire-A515-51G:18701] Signal code:  (128)
+[joao-Aspire-A515-51G:18701] Failing at address: (nil)
+[joao-Aspire-A515-51G:18701] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x3efd0)[0x7ff9097d2fd0]
+[joao-Aspire-A515-51G:18701] [ 1] main(+0x1380)[0x55d14a089380]
+[joao-Aspire-A515-51G:18701] [ 2] main(+0x16cf)[0x55d14a0896cf]
+[joao-Aspire-A515-51G:18701] [ 3] [joao-Aspire-A515-51G:18702] *** Process received signal ***
+[joao-Aspire-A515-51G:18702] Signal: Segmentation fault (11)
+[joao-Aspire-A515-51G:18702] Signal code:  (128)
+[joao-Aspire-A515-51G:18702] Failing at address: (nil)
+[joao-Aspire-A515-51G:18702] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x3efd0)[0x7f3a7a1cafd0]
+[joao-Aspire-A515-51G:18702] [ 1] main(+0x1380)[0x5556899c2380]
+[joao-Aspire-A515-51G:18702] [ 2] main(+0x16cf)[0x5556899c26cf]
+[joao-Aspire-A515-51G:18702] [ 3] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7)[0x7f3a7a1adb97]
+[joao-Aspire-A515-51G:18702] [ 4] main(+0xa4a)[0x5556899c1a4a]
+[joao-Aspire-A515-51G:18702] *** End of error message ***
+[joao-Aspire-A515-51G:18707] *** Process received signal ***
+[joao-Aspire-A515-51G:18707] Signal: Segmentation fault (11)
+[joao-Aspire-A515-51G:18707] Signal code:  (128)
+[joao-Aspire-A515-51G:18707] Failing at address: (nil)
+[joao-Aspire-A515-51G:18707] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x[ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x3efd0)[0x7f126aca9fd0]
+[joao-Aspire-A515-51G:18707] [ 1] main(+0x1380)[0x55636e570380]
+[joao-Aspire-A515-51G:18707] [ 2] main(+0x16cf)[0x55636e5706cf]
+[joao-Aspire-A515-51G:18707] [ 3] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7)[0x7f126ac8cb97]
+[joao-Aspire-A515-51G:18707] [ 4] main(+0xa4a)[0x55636e56fa4a]
+[joao-Aspire-A515-51G:18707] *** End of error message ***
+e7)[0x7ff9097b5b97]
+[joao-Aspire-A515-51G:18701] [ 4] main(+0xa4a)[0x55d14a088a4a]
+[joao-Aspire-A515-51G:18701] *** End of error message ***
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 0 on node joao-Aspire-A515-51G exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------

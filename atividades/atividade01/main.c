@@ -4,7 +4,7 @@
 
 #include "mtxMul.h"
 
-int **AlocMat(int linhas, int colunas) {
+double **AlocMat(int linhas, int colunas) {
    double **ret;
    ret = (double**)calloc(linhas,sizeof(double));
    for(int i=0;i<linhas;i++){
