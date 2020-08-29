@@ -1,4 +1,9 @@
 all:
 	mpicc *.c -c
 	mpicc *.o -o main
-	mpirun -np 4 main 16
+ex2:
+	mpirun -np 2 main 100	
+ex4:
+	mpirun -np 4 main 100
+ex8:
+	mpirun -np 8 main 100
