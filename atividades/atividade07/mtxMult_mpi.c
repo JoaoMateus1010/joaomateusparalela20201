@@ -6,8 +6,7 @@ double mtxMult_MPI(double** c,double** a,double** b,int n,int argc,char* argv[])
     int chunk;
     MPI_Init(&argc,&argv); // Inicializando o MPI    
     MPI_Comm_size(MPI_COMM_WORLD,&numtasks);//Recupera o número de tasks
-    MPI_Comm_rank(MPI_COMM_WORLD,&rank);//recupera o identificador de cada processo   
-    c=AlocMat(n,n);     
+    MPI_Comm_rank(MPI_COMM_WORLD,&rank);//recupera o identificador de cada processo            
     if(rank==ROOT) start = MPI_Wtime();
     chunk = (int)n/numtasks;
     double linha_a_buffer[chunk],coluna_b_buffer[chunk],resultado=0;
@@ -16,6 +15,7 @@ double mtxMult_MPI(double** c,double** a,double** b,int n,int argc,char* argv[])
         a=AlocMat(n,n);
         b=AlocMat(n,n);        
         b=Transpose(b,n);                                              
+        c=AlocMat(n,n);
     }
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
@@ -35,7 +35,7 @@ double mtxMult_MPI(double** c,double** a,double** b,int n,int argc,char* argv[])
             }
         }        
     }         
-    if(rank==ROOT) showMtx(c,n);
+    //if(rank==ROOT) showMtx(c,n);
     if(rank==ROOT) end = MPI_Wtime();    
     if(rank==ROOT) printf("%f",(end-start));
     MPI_Finalize();//Finaliza o MPI
