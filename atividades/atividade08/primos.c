@@ -7,7 +7,7 @@
 
 #define IS_PRIMO    (0)
 
-#define MAX (20)
+#define MAX (1000000)
 #define MIN (1)
 
 int primo (int n);
