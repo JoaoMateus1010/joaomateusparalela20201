@@ -30,6 +30,8 @@ int main(int argc,char* argv[]){
     if(rank==ROOT){
         t1 = MPI_Wtime();
     } 
+    MPI_Bcast(&size_both_vect,1,MPI_INT,ROOT,MPI_COMM_WORLD);
+
     chunk = (int)size_both_vect/numtasks;        
 
     float* vet_temp_0 = (float*)calloc(chunk,sizeof(float));        
@@ -47,7 +49,7 @@ int main(int argc,char* argv[]){
         for(int i=0;i<size_both_vect;i++){
             total_sum+=vect_0[i];
         }
-        //printf("PRODUTO: %.1f",total_sum);
+        printf("PRODUTO: %.1f",total_sum);
     }
     if(rank==ROOT){ t2 = MPI_Wtime();}
     if(rank==ROOT) printf("%f",t2-t1);                    
