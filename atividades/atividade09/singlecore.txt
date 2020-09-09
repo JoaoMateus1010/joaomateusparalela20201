@@ -7,7 +7,7 @@ L1:
 	addf f1,f1,f2 ; A+B
 	lfp f2,r3(vecD) ; load vector D
 	addf f1,f1,f2 ; (A+B)+D
-	lfp f2,r3(vecE) ; vecD and vecE
+	lfp f2,r3(vecE) ; load vector E
 	addf f1,f1,f2 ; (A+B+D)+E
 	sfp f1,r3(vecC) ; store in vecC
 	addi r3,r3,#4
