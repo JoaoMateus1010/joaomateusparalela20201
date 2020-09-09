@@ -1,0 +1,24 @@
+Quantidade de Plataformas: 2
+
+Plataforma[0]: NVIDIA CUDA
+Quantidade de dispositivos NVIDIA CUDA: 1
+=== Dispositivos da Plataforma NVIDIA CUDA: ===
+ -- Dispositivo com id 0 --
+ DEVICE_NAME = GeForce 940MX
+ DEVICE_VENDOR = NVIDIA Corporation
+ DEVICE_MAX_COMPUTE_UNITS = 3
+ CL_DEVICE_MAX_WORK_GROUP_SIZE = 1024
+ CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS = 3
+ CL_DEVICE_MAX_WORK_ITEM_SIZES = 1024, 1024, 64 
+
+
+Plataforma[1]: Intel Gen OCL Driver
+Quantidade de dispositivos Intel Gen OCL Driver: 1
+=== Dispositivos da Plataforma Intel Gen OCL Driver: ===
+ -- Dispositivo com id 0 --
+ DEVICE_NAME = Intel(R) HD Graphics Kabylake ULT GT2
+ DEVICE_VENDOR = Intel
+ DEVICE_MAX_COMPUTE_UNITS = 24
+ CL_DEVICE_MAX_WORK_GROUP_SIZE = 512
+ CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS = 3
+ CL_DEVICE_MAX_WORK_ITEM_SIZES = 512, 512, 512
