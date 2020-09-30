@@ -1,3 +1,4 @@
+// Nota 0,5
 #include <stdio.h>
 #include <stdlib.h>
 #include <mpi.h>
@@ -15,8 +16,8 @@ int main(int argc, char* argv[]){
     int buffer = num;
     MPI_Status status;
     while(buffer>0){        
-        //printf("Fluxo %d send [%d,%d]\n",buffer,rank,((rank==numtasks-1)?SOURCE:rank+1));
-        //printf("Fluxo %d recv [%d,%d]\n",buffer,((rank==SOURCE)?numtasks-1:rank-1),rank);                
+        printf("Fluxo %d send [%d,%d]\n",buffer,rank,((rank==numtasks-1)?SOURCE:rank+1));
+        printf("Fluxo %d recv [%d,%d]\n",buffer,((rank==SOURCE)?numtasks-1:rank-1),rank);                
         MPI_Send(&buffer,1,MPI_INT,((rank==numtasks-1)?SOURCE:rank+1),tag,MPI_COMM_WORLD);                
         MPI_Recv(&buffer,1,MPI_INT,((rank==SOURCE)?numtasks-1:rank-1),tag,MPI_COMM_WORLD,&status);                                                        
         buffer--;                                      
