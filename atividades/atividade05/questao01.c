@@ -1,3 +1,5 @@
+// Nota 0,5
+// Mas você tem que aprender a usar o malloc
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
