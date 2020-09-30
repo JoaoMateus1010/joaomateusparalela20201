@@ -1,3 +1,4 @@
+# Nota 0,5
 # Core i5 7200U 8 GB
 #Processos      Tempo
 1               0.032834

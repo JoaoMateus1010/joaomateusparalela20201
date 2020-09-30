@@ -1,3 +1,6 @@
+// Nota 0,5
+// Eu não deixei claro na questão, mas ficaria mais interessante ter gerado os vetores
+// apenas no processo 0. Mas não como não mencionei, está ok.
 #include <stdlib.h>
 #include <mpi.h>
 #include <stdio.h>
