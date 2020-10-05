@@ -1,3 +1,4 @@
+// Nota 0,3. Você poderia ter utilizado a mesma chamada All_to_all, apenas alterando os parâmetros.
 // Cálculo das Médias
 #include <stdio.h>
 #include <stdlib.h>
