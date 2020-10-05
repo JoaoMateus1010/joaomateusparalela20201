@@ -1,3 +1,5 @@
+// Nota 1,0. Você usou chamadas coletivas bloqueantes. Além do mais, dividiu por um chunk muito grande, deixando 
+// os processos desbalanceados.
 #include <stdio.h>
 #include <mpi.h>
 #include <math.h>
@@ -24,6 +26,7 @@ int main(int argc,char* argv[]){
     MPI_Init(&argc,&argv); // Inicializando o MPI
     MPI_Comm_size(MPI_COMM_WORLD,&numtasks);//Recupera o número de tasks
     MPI_Comm_rank(MPI_COMM_WORLD,&rank);//recupera o identificador de cada processo
+    // Você fez uma partição. O chunk era para ser menor que MAX/numtasks.
     chunk=(int) MAX/numtasks;     
     out_buff=(int*)calloc(chunk,sizeof(int));
     if(rank==ROOT){
@@ -32,6 +35,7 @@ int main(int argc,char* argv[]){
             vet[i]=i+1;                        
         } 
     }
+    // Chamadas não bloqueantes...
     MPI_Scatter(vet,chunk,MPI_INT,out_buff,chunk,MPI_INT,ROOT,MPI_COMM_WORLD); 
     primos_buffer=(int*)calloc(chunk,sizeof(int));
     for(int i=0;i<chunk;i++){                               

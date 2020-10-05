@@ -1,3 +1,4 @@
+// Nota 0,8. Divisão correta, mas saída confusa.
 #include <stdio.h>
 #include <mpi.h>
 
