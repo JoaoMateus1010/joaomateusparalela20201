@@ -1,3 +1,6 @@
+# Nota 1.0
+# Como faço para compilar a versão serial? É sério que tem que abrir o arquivo questao01.c, descomentar tudo, abrir o arquivo
+# questao02.c, comentar tudo, e executar o make?
 # Core i5 7200U 8 GB
 # N     Tempo mtxMult       Tempo mtxMult_linemajor
 64      0.00668             0.00553
