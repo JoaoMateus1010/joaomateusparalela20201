@@ -1,3 +1,4 @@
+// Nota 0,5
 #include "mtxMult_mpi.h"
 
 double mtxMult_MPI(double** c,double** a,double** b,int n,int argc,char* argv[]){ // c=a*b
@@ -20,6 +21,7 @@ double mtxMult_MPI(double** c,double** a,double** b,int n,int argc,char* argv[])
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
             if(rank==ROOT) c[i][j]=0;
+	    // Era para fazer o broadcast de B e distribuir A por linhas. 
             MPI_Scatter(a[i],chunk,MPI_DOUBLE,linha_a_buffer,chunk,MPI_DOUBLE,ROOT,MPI_COMM_WORLD);  
             MPI_Scatter(b[j],chunk,MPI_DOUBLE,coluna_b_buffer,chunk,MPI_DOUBLE,ROOT,MPI_COMM_WORLD); 
             for(int k=0;k<chunk;k++){
@@ -41,6 +43,7 @@ double mtxMult_MPI(double** c,double** a,double** b,int n,int argc,char* argv[])
     MPI_Finalize();//Finaliza o MPI
 }
 
+// Para que serve isto?
 double** Transpose(double** MTX,int n){
     double** ret=AlocMat(n,n);
     for(int i=0;i<n;i++){
